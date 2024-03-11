@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Slow Moving Animation for Existing Divs</title>
+    <style>
+        .slow-moving-div {
+            width: 160px;
+            height: 100px;
+            background-color: #3498db;
+            position: absolute;
+            margin-left: 3%;
+            transition: transform 2s ease-in-out;
+            /* transition-timing-function: ease-in;
+            transition: margin-left 0.3s,width 0.2s; */
+        }
+        div{
+            margin-left: 5px;
+        }
+        .move{
+            width: 70px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <!-- Existing divs with the class 'slow-moving-div' -->
+    <div class="slow-moving-div" id="div1" class="move"></div>
+    <div class="slow-moving-div" id="div2" class="move"></div>
+    <div class="slow-moving-div" id="div3" class="move"></div>
+    <div class="slow-moving-div" id="div4" class="move"></div>
+    <div class="slow-moving-div" id="div5" class="move"></div>
+    <div class="slow-moving-div" id="div1" class="move"></div>
+    <div class="slow-moving-div" id="div2" class="move"></div>
+    <div class="slow-moving-div" id="div3" class="move"></div>
+    <div class="slow-moving-div" id="div4" class="move"></div>
+    <div class="slow-moving-div" id="div5" class="move"></div>
+    <div class="slow-moving-div" id="div1" class="move"></div>
+    <div class="slow-moving-div" id="div2" class="move"></div>
+    <!-- Add more divs as needed -->
+</div>
+    <script>
+        // Function to update the position and apply the animation
+        function moveSlowly(div, position) {
+            position += 0.3;
+            if (position >= window.innerWidth) {
+                position = 0;
+            }
+            div.style.left = position + 'px';
+            requestAnimationFrame(() => moveSlowly(div, position));
+        }
+
+        // Get all divs with the class 'slow-moving-div'
+        const slowMovingDivs = document.querySelectorAll('.slow-moving-div');
+
+        // Apply animation to each existing div
+        slowMovingDivs.forEach((div, index) => {
+            moveSlowly(div, (index + 1) * 170); // Adjust the starting position for each div
+        });
+    </script>
+</body>
+</html>

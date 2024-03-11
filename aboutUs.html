@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./aboutUs.css">
+</head>
+<body>
+
+    <!-- <div class="main">
+        <h1>About Us</h1>
+        <video src="https://kinesso.com/wp-content/themes/stickyeyes/assets/video/output.webm" controls autoplay loop></video>
+    </div> -->
+   
+        <div>
+            <h1>About Us</h1>
+        </div>
+        <div class="video">
+            <div class="videoC"><video src="https://content.kota.co.uk/app/uploads/2022/05/Animation-v3.mp4" controls autoplay loop ></video></div>
+            <div class="videoC" id="content">
+                <h1>Making brands a damn site better</h1>
+                <p>Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why waste it with bad design? Because brands win new fans when they’re brave enough to go beyond their creative comfort zone.</p>
+            </div>
+        </div>
+        <div class="content1">
+            <h1 style="transform: translate(0px, 0px); opacity: 1;">Artists by nature.</br> Rebels by choice.</h1>
+                <div class="content11">
+                    <p>We’re a team of talented creatives who live and breathe great design. We’re not just coders who take instructions, we’re artists who take inspiration from the wider creative world of music, film and the arts.</p>
+                    <p>By soaking up culture, sharing new ideas and staying on the pulse of the latest trends, we develop brands, design websites and deliver campaigns that break the mould, and fight back against boring.</p>
+                </div>
+
+</div>
+
+<div class="slides">
+<div class="s1" id="s1" onclick="toggling('s1')">
+<img src="https://kinesso.com/wp-content/uploads/2023/10/audience-dev-1024x603.webp" alt="">
+<span>Audience Development</span>
+<div class="inner-content">
+    <h3>Audience Development</h3>
+    <p>
+        Identify and effectively target high-value audiences through our data-led insights. Make meaningful connections that drive more customers to your business and frame messaging that cuts through the noise.
+    </p>
+</div>
+</div>
+<div class="s1" id="s2" onclick="toggling('s2')">
+    <img src="https://kinesso.com/wp-content/uploads/2023/10/audience-dev-1024x603.webp" alt="">
+    <span>Audience Development</span>
+    <div class="inner-content">
+        <h3>Audience Development</h3>
+        <p>
+            Identify and effectively target high-value audiences through our data-led insights. Make meaningful connections that drive more customers to your business and frame messaging that cuts through the noise.
+        </p>
+    </div>
+</div>
+<div class="s1" id="s3" onclick="toggling('s3')"></div>
+<div class="s1" id="s4" onclick="toggling('s4')"></div>
+<div class="s1" id="s5" onclick="toggling('s5')"></div>
+<div class="s1" id="s6" onclick="toggling('s6')"></div>
+<div class="s1" id="s7" onclick="toggling('s7')"></div>
+<div class="s1" id="s8" onclick="toggling('s8')"></div>
+<div class="s1" id="s9" onclick="toggling('s9')"></div>
+<div class="s1" id="s10" onclick="toggling('s10')"></div>
+</div>
+
+<script>
+    var slide1=document.getElementById('s1');
+    document.addEventListener('DOMContentLoaded',function(){
+        slide1.classList.add("active");
+    });
+    var previousSlideId=null;
+    function toggling(id){
+       slide1.classList.remove("active");
+        var slide=document.getElementById(id);
+       if(previousSlideId!==null)
+       {
+            var previousSlide=document.getElementById(previousSlideId)
+            previousSlide.classList.remove("active");
+       }
+        slide.classList.toggle("active");
+
+        previousSlideId=slide.classList.contains("active")?id:null;
+
+        }
+        function toggleContent(id){
+            var slide=document.getElementById(id);
+        }
+</script>
+</body>
+</html>

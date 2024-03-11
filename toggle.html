@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Image on H3 Click</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <h3 class="toggle-trigger">Click me to toggle the image</h3>
+  <img src="./d1.jpg" class="toggle-target" style="display: block;">
+  <img src="./d2.jpg" class="toggle-target1" style="display: none;">
+  <script>
+    $(document).ready(function() {
+      $(".toggle-trigger").click(function() {
+        $(".toggle-target").toggle();
+        $(".toggle-target1").toggle();
+      });
+    });
+  </script>
+
+</body>
+</html>

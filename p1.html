@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Append to Table</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Add event listener to the button
+      document.getElementById('addButton').addEventListener('click', function() {
+        appendToTable();
+      });
+
+      function appendToTable() {
+        // Get the input value
+        var inputValue = document.getElementById('inputField').value;
+        // Get the table reference
+        var table = document.getElementById('dataTable');
+
+        // Insert a new row at the end of the table
+        var newRow = table.insertRow(table.rows.length);
+
+        // Insert a cell in the row
+        var cell = newRow.insertCell(0);
+
+        // Append the input value to the cell
+        cell.innerHTML = inputValue;
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <input type="text" id="inputField" placeholder="Enter value">
+  <button id="addButton">Add to Table</button>
+
+  <table id="dataTable" border="1">
+    <tr>
+      <th>Values</th>
+    </tr>
+    <tr>
+        <td>1</td>
+    </tr>
+    <!-- Existing rows go here, if any -->
+  </table>
+
+</body>
+</html>

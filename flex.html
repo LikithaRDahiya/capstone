@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Your default styles for the main div and child divs */
+    .main-container {
+      display: flex;
+      flex-direction: row; /* Default: Display child divs in a row */
+      justify-content: space-between; /* Optional: Adjust as needed */
+    }
+
+    .child-div {
+      width: 100%; /* Optional: Make child divs full width */
+      box-sizing: border-box;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 767px) {
+      /* Change flex direction to column for smaller screens */
+      .main-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="child-div">
+      <!-- Content for the first child div -->
+      <p>Child div 1</p>
+    </div>
+
+    <div class="child-div">
+      <!-- Content for the second child div -->
+      <p>Child div 2</p>
+    </div>
+
+    <!-- Add more child divs as needed -->
+  </div>
+</body>
+</html>
